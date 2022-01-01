@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Spinner from '../layout/Spinner';
 
 function UserResults() {
   const githubUrl = process.env.REACT_APP_GITHUB_URL;
@@ -22,8 +23,6 @@ function UserResults() {
 
     setUsers(data);
     setLoading(false);
-
-    console.log(data);
   };
 
   if (!loading) {
@@ -35,7 +34,7 @@ function UserResults() {
       </div>
     );
   } else {
-    return <h3>Loading...</h3>;
+    return <Spinner />;
   }
 }
 
